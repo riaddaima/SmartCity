@@ -5,16 +5,16 @@ import java.util.Objects;
 public class Apartment {
 	private int ID;
 
-	public Apartment(int iD) {
-		ID = iD;
+	public Apartment(int ID) {
+		this.ID = ID;
 	}
 
 	public int getID() {
 		return ID;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public void setID(int ID) {
+		this.ID = ID;
 	}
 
 	@Override
@@ -34,9 +34,5 @@ public class Apartment {
 		Apartment other = (Apartment) obj;
 		return ID == other.ID;
 	}
-	
-	
-	
-	
 	
 }

@@ -1,29 +1,26 @@
 package smartBuilding;
 
-import java.util.Objects;
+import java.util.*;
 
 public class Floor {
 	private int ID;
 	private int floorNum; // 0-indexed
 	private int numAppartments;
+	public Map<Integer, Apartment> apartments;
 	
-	
-	public Floor(int iD, int floorNum, int numAppartments) {
-		ID = iD;
+	public Floor(int ID, int floorNum) {
+		this.ID = ID;
 		this.floorNum = floorNum;
-		this.numAppartments = numAppartments;
+		this.apartments = new HashMap<Integer, Apartment>();
 	}
-
 
 	public int getID() {
 		return ID;
 	}
 
-
-	public void setID(int iD) {
-		ID = iD;
+	public void setID(int ID) {
+		this.ID = ID;
 	}
-
 
 	public int getFloorNum() {
 		return floorNum;
@@ -33,18 +30,6 @@ public class Floor {
 	public void setFloorNum(int floorNum) {
 		this.floorNum = floorNum;
 	}
-
-
-	public int getNumAppartments() {
-		return numAppartments;
-	}
-
-
-	public void setNumAppartments(int numAppartments) {
-		this.numAppartments = numAppartments;
-	}
-
-
 
 	@Override
 	public boolean equals(Object obj) {
@@ -63,9 +48,5 @@ public class Floor {
 	public String toString() {
 		return "Floor: ID=" + ID + ", floorNum=" + floorNum + ", numAppartments=" + numAppartments;
 	}
-	
-	
-	
-	
 	
 }

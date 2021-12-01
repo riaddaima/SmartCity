@@ -27,6 +27,9 @@ public class Appliance {
 		this.status = status;
 	}
 
+	public void Switch() {
+		this.status = !this.status;
+	}
 
 	@Override
 	public boolean equals(Object obj) {
