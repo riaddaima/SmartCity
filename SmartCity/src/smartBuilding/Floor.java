@@ -5,13 +5,14 @@ import java.util.*;
 public class Floor {
 	private int ID;
 	private int floorNum; // 0-indexed
-	private int numAppartments;
 	public Map<Integer, Apartment> apartments;
+	private int numApartments;
 	
 	public Floor(int ID, int floorNum) {
 		this.ID = ID;
 		this.floorNum = floorNum;
 		this.apartments = new HashMap<Integer, Apartment>();
+		this.numApartments = apartments.size();
 	}
 
 	public int getID() {
@@ -31,6 +32,15 @@ public class Floor {
 		this.floorNum = floorNum;
 	}
 
+	public int getNumApartments() {
+		return this.numApartments;
+	}
+
+	public void setNumApartments(int numApartments) {
+		this.numApartments = numApartments;
+	}
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -40,13 +50,13 @@ public class Floor {
 			return false;
 		}
 		Floor other = (Floor) obj;
-		return ID == other.ID && floorNum == other.floorNum && numAppartments == other.numAppartments;
+		return ID == other.ID && floorNum == other.floorNum && numApartments == other.numApartments;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Floor: ID=" + ID + ", floorNum=" + floorNum + ", numAppartments=" + numAppartments;
+		return "Floor: ID=" + ID + ", floorNum=" + floorNum + ", numAppartments=" + numApartments;
 	}
 	
 }

@@ -7,6 +7,8 @@ public class ApartmentCollection {
   
   public static void addApartement(SmartStreet smartStreet, int buildingID, int floorID) {
     Apartment apartment = new Apartment(count.incrementAndGet());
-    smartStreet.smartBuildings.get(buildingID).floors.get(floorID).apartments.put(apartment.getID(), apartment);
+    Floor floor = smartStreet.smartBuildings.get(buildingID).floors.get(floorID);
+    floor.apartments.put(apartment.getID(), apartment);
+    floor.setNumApartments(floor.apartments.size());
   }
 }

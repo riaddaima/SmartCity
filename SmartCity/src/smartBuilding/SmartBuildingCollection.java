@@ -10,14 +10,4 @@ public class SmartBuildingCollection {
     SmartBuilding smartBuilding = new SmartBuilding(count.incrementAndGet(), type, location, numResidents);
     smartStreet.smartBuildings.put(smartBuilding.getID(), smartBuilding);
   }
-
-  // testing purpose: Initializing Buildings because we don't have SmartStreets implementation yet;
-  // public SmartBuildingCollection() {
-    // SmartBuildings = new ArrayList<>();
-    // SmartBuildings.add(new SmartBuilding("Residential", "Smart Street Location", 10));
-    // SmartBuildings.add(new SmartBuilding("Business", "Smart Street Location", 5));
-    // SmartBuildings = new HashMap<Integer, SmartBuilding>();
-    // SmartBuildings.put(count.incrementAndGet(), new SmartBuilding(count.get(), "Residential", "Smart Street Location", 10));
-    // SmartBuildings.put(count.incrementAndGet(), new SmartBuilding(count.get(), "Business", "Smart Street Location", 5));
-  // }
 }

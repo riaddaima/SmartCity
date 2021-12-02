@@ -15,6 +15,7 @@ public class App {
 
   public static void seed(Map<Integer, SmartStreet> smartStreets) {
     // ---- SEEDERS ---- //
+    
     int count = 0;
     smartStreets.put(++count, new SmartStreet(count, "My Smart Street 1"));
     smartStreets.put(++count, new SmartStreet(count, "My Smart Street 2"));
@@ -39,8 +40,8 @@ public class App {
     ApartmentCollection.addApartement(smartStreet, 1, 3);
     ApartmentCollection.addApartement(smartStreet, 1, 3);
 
-    // Testing if everything works by printing apartement.
-    System.out.println(smartStreet.smartBuildings.get(1).floors.get(1).apartments.get(1));
+    // Testing if everything works by printing floor.
+    System.out.println(smartStreet.smartBuildings.get(1).floors.get(1));
 
     // ---- SEEDERS ---- //
   }

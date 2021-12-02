@@ -1,7 +1,5 @@
 package smartBuilding;
 
-import java.util.Objects;
-
 public class Apartment {
 	private int ID;
 
