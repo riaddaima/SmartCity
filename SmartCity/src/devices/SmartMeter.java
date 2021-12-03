@@ -3,8 +3,7 @@ package devices;
 public class SmartMeter extends SensorNodes {
   private int value;
 
-  public SmartMeter(int ID, int value) {
-    super(ID);
+  public SmartMeter(int value) {
     this.value = value;
   }
 

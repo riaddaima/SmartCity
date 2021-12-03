@@ -45,14 +45,18 @@ public class App {
     Apartment apartment = smartStreet.smartBuildings.get(1).floors.get(1).apartments.get(1);
     SensorNodesCollection.addHumiditySensor(apartment);
     SensorNodesCollection.addMotionSensor(apartment);
-    // SensorNodesCollection.addSmartMeter(apartment);
     SensorNodesCollection.addTemperatureSensor(apartment);
 
     // Testing if everything works by printing floor.
     System.out.println(smartStreet);
     System.out.println(smartStreet.smartBuildings.get(1));
+    System.out.println(smartStreet.smartBuildings.get(1).controlRoom);
     System.out.println(smartStreet.smartBuildings.get(1).floors.get(1));
-    System.out.println(apartment);
+    System.out.println(smartStreet.smartBuildings.get(1).floors.get(1).apartments.get(1));
+
+
+    // System.out.println(smartStreet.smartBuildings.get(1).floors.get(1));
+    // System.out.println(apartment);
 
 
     // ---- SEEDERS ---- //

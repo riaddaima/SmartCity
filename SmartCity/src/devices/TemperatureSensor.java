@@ -3,8 +3,7 @@ package devices;
 public class TemperatureSensor extends SensorNodes {
   private int value;
 
-  public TemperatureSensor(int ID, int value) {
-    super(ID);
+  public TemperatureSensor(int value) {
     this.value = value;
   }
 

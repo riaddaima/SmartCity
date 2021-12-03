@@ -10,6 +10,7 @@ public class ApartmentCollection {
   public static void addApartement(SmartStreet smartStreet, int buildingID, int floorID) {
     Floor floor = smartStreet.smartBuildings.get(buildingID).floors.get(floorID);
     Apartment apartment = new Apartment(count.incrementAndGet());
+    
     for (ApplianceType apt : ApplianceType.values()) {
       Appliance appliance = new Appliance(apt);
       apartment.appliances.put(appliance.getType(), appliance);

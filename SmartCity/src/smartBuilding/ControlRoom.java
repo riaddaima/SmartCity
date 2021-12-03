@@ -1,26 +1,30 @@
 package smartBuilding;
 
-public class ControlRoom {
-  private String ID;
+import devices.NetworkGateway;
 
-  public ControlRoom(String ID) {
+public class ControlRoom {
+  private int ID;
+  public NetworkGateway networkGateway;
+
+  public ControlRoom(int ID) {
     this.ID = ID;
   }
 
-  public String getID() {
+  public int getID() {
     return this.ID;
   }
 
-  public void setID(String ID) {
+  public void setID(int ID) {
     this.ID = ID;
   }
 
 
   @Override
   public String toString() {
-    return "{" +
-      " ID='" + getID() + "'" +
-      "}";
+    String result = "";
+    result = result.concat("\t[ControlRoom]");
+    result = result.concat(this.networkGateway.toString());
+    return result;
   }
 
 }

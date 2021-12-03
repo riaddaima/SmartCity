@@ -8,6 +8,7 @@ public class SmartBuilding {
 	private String location;
 	private int numResidents;
 	public Map<Integer, Floor> floors;
+	public ControlRoom controlRoom;
 	
 	public SmartBuilding(int ID, String type, String location, int numResidents) {
 		this.ID = ID;

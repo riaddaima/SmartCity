@@ -3,9 +3,7 @@ package devices;
 public class MotionSensor extends SensorNodes {
   private int value;
 
-
-  public MotionSensor(int ID, int value) {
-    super(ID);
+  public MotionSensor(int value) {
     this.value = value;
   }
 
