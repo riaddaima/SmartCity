@@ -4,8 +4,7 @@ public class HumiditySensor extends SensorNodes {
   private int value;
 
 
-  public HumiditySensor(int ID, int value) {
-    super(ID);
+  public HumiditySensor(int value) {
     this.value = value;
   }
 
@@ -21,9 +20,7 @@ public class HumiditySensor extends SensorNodes {
 
   @Override
   public String toString() {
-    return "{" +
-      " value='" + getValue() + "'" +
-      "}";
+    return String.format("\n\t[Humidity Sensor]: %d%%", getValue());
   }
 
 

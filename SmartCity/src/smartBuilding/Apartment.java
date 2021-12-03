@@ -1,25 +1,38 @@
 package smartBuilding;
-
-import java.util.Objects;
+import java.util.*;
+import devices.ApplianceType;
+import devices.Appliance;
+import devices.SensorNodes;
 
 public class Apartment {
 	private int ID;
+  public ArrayList<SensorNodes> sensorNodes;
+	public Map<ApplianceType, Appliance> appliances;
 
-	public Apartment(int iD) {
-		ID = iD;
+	public Apartment(int ID) {
+		this.ID = ID;
+		this.sensorNodes = new ArrayList<SensorNodes>();
+		this.appliances = new HashMap<ApplianceType, Appliance>();
 	}
 
 	public int getID() {
 		return ID;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public void setID(int ID) {
+		this.ID = ID;
 	}
 
 	@Override
 	public String toString() {
-		return "Apartment : ID=" + ID ;
+		String result = "[Apartment]";
+		for (SensorNodes sensorNode : sensorNodes) {
+			result = result.concat(sensorNode.toString());
+		}
+		for (Appliance appliance : appliances.values()) {
+			result = result.concat(appliance.toString());
+		}
+		return result;
 	}
 
 
@@ -34,9 +47,5 @@ public class Apartment {
 		Apartment other = (Apartment) obj;
 		return ID == other.ID;
 	}
-	
-	
-	
-	
 	
 }

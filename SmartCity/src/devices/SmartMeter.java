@@ -3,8 +3,7 @@ package devices;
 public class SmartMeter extends SensorNodes {
   private int value;
 
-  public SmartMeter(int ID, int value) {
-    super(ID);
+  public SmartMeter(int value) {
     this.value = value;
   }
 
@@ -20,10 +19,7 @@ public class SmartMeter extends SensorNodes {
 
   @Override
   public String toString() {
-    return "{" +
-      " value='" + getValue() + "'" +
-      "}";
+    return String.format("\n\t[Smart Meter]: %d W", getValue());
   }
-
 
 }

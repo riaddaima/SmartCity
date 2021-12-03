@@ -1,28 +1,40 @@
 package smartBuilding;
 
-import java.util.Objects;
+import java.util.*;
 
 public class SmartBuilding {
-	private int id;
+	private int ID;
 	private BuildingType type;
 	private String location;
 	private int numResidents;
-	//private Floor[] numFloors;
+	public Map<Integer, Floor> floors;
+	public ControlRoom controlRoom;
 	
-	public SmartBuilding(int id, String type, String location, int numResidents) {
-		
-		this.id = id;
-		this.type = BuildingType.valueOf(type); // must handle exception
+	public SmartBuilding(int ID, String type, String location, int numResidents) {
+		this.ID = ID;
+		setType(type);
 		this.location = location;
 		this.numResidents = numResidents;
+		this.floors = new HashMap<Integer, Floor>();
 	}
 
-	public int getId() {
-		return id;
+	public int getID() {
+		return ID;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setID(int ID) {
+		this.ID = ID;
+	}
+
+	public String getType() {
+		String type = this.type.name();
+		type = type.toLowerCase();
+		type = type.substring(0, 1).toUpperCase() + type.substring(1);
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = BuildingType.valueOf(type.toUpperCase()); // must handle exception
 	}
 
 	public String getLocation() {
@@ -41,6 +53,9 @@ public class SmartBuilding {
 		this.numResidents = numResidents;
 	}
 
+	public void setFloors(Floor floor) {
+		floors.put(floor.getID(), floor);
+	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -51,18 +66,15 @@ public class SmartBuilding {
 			return false;
 		}
 		SmartBuilding other = (SmartBuilding) obj;
-		return id == other.id && Objects.equals(location, other.location) && numResidents == other.numResidents
+		return ID == other.ID && Objects.equals(location, other.location) && numResidents == other.numResidents
 				&& type == other.type;
 	}
 
 	@Override
 	public String toString() {
-		return "SmartBuilding id=" + id + ", type=" + type + ", location=" + location + ", numResidents="
-				+ numResidents;
-	} // galk a ssi khassna nbdloha
-	
-	
-
-	
-	
+		String result = "";
+		result = result.concat(String.format("[Smart Building] is %s in %s with %d residents.", getType(), getLocation(), getNumResidents()));
+		return result;
+	}
+		
 }

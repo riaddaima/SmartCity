@@ -3,9 +3,7 @@ package devices;
 public class MotionSensor extends SensorNodes {
   private int value;
 
-
-  public MotionSensor(int ID, int value) {
-    super(ID);
+  public MotionSensor(int value) {
     this.value = value;
   }
 
@@ -21,9 +19,7 @@ public class MotionSensor extends SensorNodes {
 
   @Override
   public String toString() {
-    return "{" +
-      " value='" + getValue() + "'" +
-      "}";
+    return String.format("\n\t[Motion Sensor]: range %dm", getValue());
   }
 
 }

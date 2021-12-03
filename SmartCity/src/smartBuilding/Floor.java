@@ -1,29 +1,27 @@
 package smartBuilding;
 
-import java.util.Objects;
+import java.util.*;
 
 public class Floor {
 	private int ID;
 	private int floorNum; // 0-indexed
-	private int numAppartments;
+	public Map<Integer, Apartment> apartments;
+	private int numApartments;
 	
-	
-	public Floor(int iD, int floorNum, int numAppartments) {
-		ID = iD;
+	public Floor(int ID, int floorNum) {
+		this.ID = ID;
 		this.floorNum = floorNum;
-		this.numAppartments = numAppartments;
+		this.apartments = new HashMap<Integer, Apartment>();
+		this.numApartments = apartments.size();
 	}
-
 
 	public int getID() {
 		return ID;
 	}
 
-
-	public void setID(int iD) {
-		ID = iD;
+	public void setID(int ID) {
+		this.ID = ID;
 	}
-
 
 	public int getFloorNum() {
 		return floorNum;
@@ -34,16 +32,13 @@ public class Floor {
 		this.floorNum = floorNum;
 	}
 
-
-	public int getNumAppartments() {
-		return numAppartments;
+	public int getNumApartments() {
+		return this.numApartments;
 	}
 
-
-	public void setNumAppartments(int numAppartments) {
-		this.numAppartments = numAppartments;
+	public void setNumApartments(int numApartments) {
+		this.numApartments = numApartments;
 	}
-
 
 
 	@Override
@@ -55,17 +50,15 @@ public class Floor {
 			return false;
 		}
 		Floor other = (Floor) obj;
-		return ID == other.ID && floorNum == other.floorNum && numAppartments == other.numAppartments;
+		return ID == other.ID && floorNum == other.floorNum && numApartments == other.numApartments;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Floor: ID=" + ID + ", floorNum=" + floorNum + ", numAppartments=" + numAppartments;
+		String result = "";
+		result = result.concat(String.format("[Floor] Number %d has %d apartments.", getFloorNum(), getNumApartments()));
+		return result;
 	}
-	
-	
-	
-	
 	
 }

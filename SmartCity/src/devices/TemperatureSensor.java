@@ -3,8 +3,7 @@ package devices;
 public class TemperatureSensor extends SensorNodes {
   private int value;
 
-  public TemperatureSensor(int ID, int value) {
-    super(ID);
+  public TemperatureSensor(int value) {
     this.value = value;
   }
 
@@ -19,9 +18,7 @@ public class TemperatureSensor extends SensorNodes {
 
   @Override
   public String toString() {
-    return "{" +
-      " value='" + getValue() + "'" +
-      "}";
+    return String.format("\n\t[Temperature Sensor]: %d °C", getValue());
   }
 
 }
