@@ -56,7 +56,9 @@ public class Floor {
 
 	@Override
 	public String toString() {
-		return "Floor: ID=" + ID + ", floorNum=" + floorNum + ", numAppartments=" + numApartments;
+		String result = "";
+		result = result.concat(String.format("[Floor] Number %d has %d apartments.", getFloorNum(), getNumApartments()));
+		return result;
 	}
 	
 }

@@ -20,10 +20,7 @@ public class SmartMeter extends SensorNodes {
 
   @Override
   public String toString() {
-    return "{" +
-      " value='" + getValue() + "'" +
-      "}";
+    return String.format("\n\t[Smart Meter]: %d W", getValue());
   }
-
 
 }

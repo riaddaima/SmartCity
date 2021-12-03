@@ -9,5 +9,6 @@ public class SmartBuildingCollection {
   public static void addBuilding(SmartStreet smartStreet, String type, String location, int numResidents) {
     SmartBuilding smartBuilding = new SmartBuilding(count.incrementAndGet(), type, location, numResidents);
     smartStreet.smartBuildings.put(smartBuilding.getID(), smartBuilding);
+    smartStreet.generalControlRoom.setNumBuildings(smartStreet.smartBuildings.size());
   }
 }

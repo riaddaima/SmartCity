@@ -21,9 +21,7 @@ public class HumiditySensor extends SensorNodes {
 
   @Override
   public String toString() {
-    return "{" +
-      " value='" + getValue() + "'" +
-      "}";
+    return String.format("\n\t[Humidity Sensor]: %d%%", getValue());
   }
 
 

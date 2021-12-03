@@ -19,9 +19,7 @@ public class TemperatureSensor extends SensorNodes {
 
   @Override
   public String toString() {
-    return "{" +
-      " value='" + getValue() + "'" +
-      "}";
+    return String.format("\n\t[Temperature Sensor]: %d °C", getValue());
   }
 
 }

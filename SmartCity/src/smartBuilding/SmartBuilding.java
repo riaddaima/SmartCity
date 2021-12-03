@@ -11,7 +11,7 @@ public class SmartBuilding {
 	
 	public SmartBuilding(int ID, String type, String location, int numResidents) {
 		this.ID = ID;
-		this.type = BuildingType.valueOf(type.toUpperCase()); // must handle exception
+		setType(type);
 		this.location = location;
 		this.numResidents = numResidents;
 		this.floors = new HashMap<Integer, Floor>();
@@ -23,6 +23,17 @@ public class SmartBuilding {
 
 	public void setID(int ID) {
 		this.ID = ID;
+	}
+
+	public String getType() {
+		String type = this.type.name();
+		type = type.toLowerCase();
+		type = type.substring(0, 1).toUpperCase() + type.substring(1);
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = BuildingType.valueOf(type.toUpperCase()); // must handle exception
 	}
 
 	public String getLocation() {
@@ -60,8 +71,9 @@ public class SmartBuilding {
 
 	@Override
 	public String toString() {
-		return "SmartBuilding ID=" + ID + ", type=" + type + ", location=" + location + ", numResidents="
-				+ numResidents;
+		String result = "";
+		result = result.concat(String.format("[Smart Building] is %s in %s with %d residents.", getType(), getLocation(), getNumResidents()));
+		return result;
 	}
 		
 }
