@@ -1,9 +1,7 @@
 import smartStreet.*;
 import smartBuilding.SmartBuildingCollection;
 import smartBuilding.FloorCollection;
-import smartBuilding.Apartment;
 import smartBuilding.ApartmentCollection;
-import devices.SensorNodesCollection;
 
 import java.util.*;
 
@@ -42,11 +40,6 @@ public class App {
     ApartmentCollection.addApartement(smartStreet, 1, 3);
     ApartmentCollection.addApartement(smartStreet, 1, 3);
 
-    Apartment apartment = smartStreet.smartBuildings.get(1).floors.get(1).apartments.get(1);
-    SensorNodesCollection.addHumiditySensor(apartment);
-    SensorNodesCollection.addMotionSensor(apartment);
-    SensorNodesCollection.addTemperatureSensor(apartment);
-
     // Testing if everything works by printing floor.
     System.out.println(smartStreet);
     System.out.println(smartStreet.smartBuildings.get(1));
@@ -54,6 +47,7 @@ public class App {
     System.out.println(smartStreet.smartBuildings.get(1).floors.get(1));
     System.out.println(smartStreet.smartBuildings.get(1).floors.get(1).apartments.get(1));
 
+    System.out.println(smartStreet.smartBuildings.get(1).controlRoom.networkGateway);
 
     // System.out.println(smartStreet.smartBuildings.get(1).floors.get(1));
     // System.out.println(apartment);

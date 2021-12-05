@@ -17,5 +17,6 @@ public class ApartmentCollection {
     }
     floor.apartments.put(apartment.getID(), apartment);
     floor.setNumApartments(floor.apartments.size());
+    smartStreet.smartBuildings.get(buildingID).controlRoom.networkGateway.sensorNodes.put(apartment.getID(), apartment.sensorNode); // Appending sensorNode to network gateway whenever an apartment is added.
   }
 }
