@@ -1,9 +1,11 @@
 package devices;
 
-public class TemperatureSensor extends SensorNodes {
+public class TemperatureSensor {
   private int value;
 
-  public TemperatureSensor(int value) {
+  public TemperatureSensor() {
+    int min = 0, max = 40;
+    int value = (int) Math.floor(Math.random()*(max-min+1)+min);
     this.value = value;
   }
 

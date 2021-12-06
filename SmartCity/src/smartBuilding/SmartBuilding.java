@@ -2,20 +2,23 @@ package smartBuilding;
 
 import java.util.*;
 
+import smartStreet.SmartStreet;
+
 public class SmartBuilding {
 	private int ID;
 	private BuildingType type;
-	private String location;
+	private SmartStreet location;
 	private int numResidents;
 	public Map<Integer, Floor> floors;
 	public ControlRoom controlRoom;
 	
-	public SmartBuilding(int ID, String type, String location, int numResidents) {
+	public SmartBuilding(int ID, String type, SmartStreet location, int numResidents) {
 		this.ID = ID;
 		setType(type);
 		this.location = location;
 		this.numResidents = numResidents;
 		this.floors = new HashMap<Integer, Floor>();
+		this.controlRoom = new ControlRoom();
 	}
 
 	public int getID() {
@@ -37,11 +40,11 @@ public class SmartBuilding {
 		this.type = BuildingType.valueOf(type.toUpperCase()); // must handle exception
 	}
 
-	public String getLocation() {
+	public SmartStreet getLocation() {
 		return location;
 	}
 
-	public void setLocation(String location) {
+	public void setLocation(SmartStreet location) {
 		this.location = location;
 	}
 

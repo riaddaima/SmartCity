@@ -6,12 +6,12 @@ import devices.SensorNodes;
 
 public class Apartment {
 	private int ID;
-  public ArrayList<SensorNodes> sensorNodes;
+  public SensorNodes sensorNode;
 	public Map<ApplianceType, Appliance> appliances;
 
 	public Apartment(int ID) {
 		this.ID = ID;
-		this.sensorNodes = new ArrayList<SensorNodes>();
+		this.sensorNode = new SensorNodes();
 		this.appliances = new HashMap<ApplianceType, Appliance>();
 	}
 
@@ -26,9 +26,7 @@ public class Apartment {
 	@Override
 	public String toString() {
 		String result = "[Apartment]";
-		for (SensorNodes sensorNode : sensorNodes) {
-			result = result.concat(sensorNode.toString());
-		}
+		result = result.concat(sensorNode.toString());
 		for (Appliance appliance : appliances.values()) {
 			result = result.concat(appliance.toString());
 		}

@@ -1,9 +1,11 @@
 package devices;
 
-public class MotionSensor extends SensorNodes {
+public class MotionSensor {
   private int value;
 
-  public MotionSensor(int value) {
+  public MotionSensor() {
+    int min = 0, max = 10;
+    int value = (int) Math.floor(Math.random()*(max-min+1)+min);
     this.value = value;
   }
 

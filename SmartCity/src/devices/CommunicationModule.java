@@ -1,6 +1,6 @@
 package devices;
 
-public class CommunicationModule extends SensorNodes {
+public class CommunicationModule {
 
   @Override
   public String toString() {

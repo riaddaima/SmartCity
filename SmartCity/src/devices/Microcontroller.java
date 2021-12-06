@@ -1,6 +1,6 @@
 package devices;
 
-public class Microcontroller extends SensorNodes {
+public class Microcontroller {
 
   @Override
   public String toString() {
