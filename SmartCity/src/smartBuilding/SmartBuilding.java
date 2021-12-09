@@ -9,7 +9,7 @@ public class SmartBuilding {
 	private BuildingType type;
 	private SmartStreet location;
 	private int numResidents;
-	public Map<Integer, Floor> floors;
+	public Map<Integer, Apartment> apartments;
 	public ControlRoom controlRoom;
 	
 	public SmartBuilding(int ID, String type, SmartStreet location, int numResidents) {
@@ -17,7 +17,7 @@ public class SmartBuilding {
 		setType(type);
 		this.location = location;
 		this.numResidents = numResidents;
-		this.floors = new HashMap<Integer, Floor>();
+		this.apartments = new HashMap<Integer, Apartment>();
 		this.controlRoom = new ControlRoom();
 	}
 
@@ -37,7 +37,7 @@ public class SmartBuilding {
 	}
 
 	public void setType(String type) {
-		this.type = BuildingType.valueOf(type.toUpperCase()); // must handle exception
+		this.type = BuildingType.valueOf(type.toUpperCase());
 	}
 
 	public SmartStreet getLocation() {
@@ -55,29 +55,5 @@ public class SmartBuilding {
 	public void setNumResidents(int numResidents) {
 		this.numResidents = numResidents;
 	}
-
-	public void setFloors(Floor floor) {
-		floors.put(floor.getID(), floor);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof SmartBuilding)) {
-			return false;
-		}
-		SmartBuilding other = (SmartBuilding) obj;
-		return ID == other.ID && Objects.equals(location, other.location) && numResidents == other.numResidents
-				&& type == other.type;
-	}
-
-	@Override
-	public String toString() {
-		String result = "";
-		result = result.concat(String.format("[Smart Building] is %s in %s with %d residents.", getType(), getLocation(), getNumResidents()));
-		return result;
-	}
-		
+	
 }

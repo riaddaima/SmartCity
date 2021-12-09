@@ -1,22 +1,21 @@
 package smartStreet;
-import java.util.*;
-
-import devices.SensorNodes;
-import smartBuilding.*;
+import java.util.Map;
+import java.util.HashMap;
+import smartBuilding.SmartBuilding;
 
 public class SmartStreet {
   private int ID;
   private String name;
   public Map<Integer, SmartBuilding> smartBuildings;
   public GeneralControlRoom generalControlRoom;
-  public ArrayList<SensorNodes> sensorNodes;
+  private SmartStreetSensorNodes sensorNode;
 
   public SmartStreet(int ID, String name) {
     this.ID = ID;
     this.name = name;
     this.smartBuildings = new HashMap<Integer, SmartBuilding>();
     this.generalControlRoom = new GeneralControlRoom();
-		this.sensorNodes = new ArrayList<SensorNodes>();
+		this.sensorNode = new SmartStreetSensorNodes();
   }
 
   public int getID() {
@@ -35,11 +34,12 @@ public class SmartStreet {
     this.name = name;
   }
 
-
-  @Override
-  public String toString() {
-    String result = "";
-    result = result.concat(String.format("[Smart Street] %s.", getName()));
-    return result;
+  public SmartStreetSensorNodes getSensorNode() {
+    return this.sensorNode;
   }
+
+  public void setSensorNode(SmartStreetSensorNodes sensorNode) {
+    this.sensorNode = sensorNode;
+  }
+
 }

@@ -1,4 +1,4 @@
-package smartBuilding;
+ package smartBuilding;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import smartStreet.SmartStreet;
@@ -9,8 +9,9 @@ public class SmartBuildingCollection {
 
   public static void addBuilding(SmartStreet smartStreet, String type, int numResidents) {
     SmartBuilding smartBuilding = new SmartBuilding(count.incrementAndGet(), type, smartStreet, numResidents);
-    smartBuilding.controlRoom = new ControlRoom();
     smartStreet.smartBuildings.put(smartBuilding.getID(), smartBuilding);
-    smartStreet.generalControlRoom.setNumBuildings(smartStreet.smartBuildings.size());
+
+    int numBuildings = smartStreet.generalControlRoom.getNumBuildings();
+    smartStreet.generalControlRoom.setNumBuildings(++numBuildings);
   }
 }

@@ -1,20 +1,16 @@
 package smartBuilding;
-
+import java.util.Map;
+import java.util.HashMap;
 import devices.NetworkGateway;
 
 public class ControlRoom {
+
+  public Map<Integer, Apartment> sensorNodes;
   public NetworkGateway networkGateway;
 
   public ControlRoom() {
+		this.sensorNodes = new HashMap<Integer, Apartment>();
     this.networkGateway = new NetworkGateway();
-  }
-
-  @Override
-  public String toString() {
-    String result = "";
-    result = result.concat("[ControlRoom]\n");
-    result = result.concat(this.networkGateway.toString());
-    return result;
   }
 
 }
