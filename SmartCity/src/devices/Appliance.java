@@ -3,19 +3,23 @@ package devices;
 public class Appliance {
 
 	private ApplianceType type;
-	public SmartMeter smartMeter;
-	public Switch switchAppliance;
+	public String smartMeter;
+	public boolean status = false;
 
 	public Appliance(ApplianceType type) {
-		this.type = type; // must handle exception
-		this.smartMeter = new SmartMeter();
-		this.switchAppliance = new Switch();
+		this.type = type;
+
+		int min = 0, max = 500;
+    int value = (int) Math.floor(Math.random()*(max-min+1)+min);
+    this.smartMeter = String.format("%d W", value);
 	}
 
 	public Appliance(String type) {
-		this.type = ApplianceType.valueOf(type); // must handle exception
-		this.smartMeter = new SmartMeter();
-		this.switchAppliance = new Switch();
+		this.type = ApplianceType.valueOf(type);
+
+		int min = 0, max = 500;
+    int value = (int) Math.floor(Math.random()*(max-min+1)+min);
+    this.smartMeter = String.format("%d W", value);
 	}
 
 	public ApplianceType getType() {
@@ -33,23 +37,24 @@ public class Appliance {
 		this.type = type;
 	}
 
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (!(obj instanceof Appliance)) {
-			return false;
-		}
-		Appliance other = (Appliance) obj;
-		return switchAppliance.status == other.switchAppliance.status && type == other.type;
+	public void setSmartMeter(String smartMeter) {
+		this.smartMeter = smartMeter;
 	}
 
-	@Override
-	public String toString() {
-		String result = "";
-		result = result.concat(String.format("\n\t[Appliance] %s is %s with a consumption of %d W", getTypeName(), switchAppliance.getStatus(), smartMeter.getValue()));
-		return result;
+	public String getSmartMeter() {
+		return this.smartMeter;
 	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	public void Switch() {
+		this.status = !this.status;
+	}
+
+	public String getStatus() {
+		return this.status ? "ON" : "OFF";
+	}
+
 }

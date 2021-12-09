@@ -1,15 +1,13 @@
 import smartStreet.*;
 import smartBuilding.SmartBuildingCollection;
-import smartBuilding.FloorCollection;
 import smartBuilding.ApartmentCollection;
 
 import java.util.*;
 
-
 public class App {
 
+  static Map<Integer, SmartStreet> smartStreets = new HashMap<Integer, SmartStreet>();
   public static void main(String[] args) {
-    Map<Integer, SmartStreet> smartStreets = new HashMap<Integer, SmartStreet>();
     seed(smartStreets);
   }
 
@@ -25,28 +23,16 @@ public class App {
       // 1 Building
     SmartBuildingCollection.addBuilding(smartStreet, "Business", 10);
 
-      // 3 Floors
-    FloorCollection.addFloor(smartStreet, 1, 0);
-    FloorCollection.addFloor(smartStreet, 1, 1);
-    FloorCollection.addFloor(smartStreet, 1, 2);
-
       // 2 apartements in each floor
-    ApartmentCollection.addApartement(smartStreet, 1, 1);
-    ApartmentCollection.addApartement(smartStreet, 1, 1);
+    ApartmentCollection.addApartement(smartStreet, 1);
+    ApartmentCollection.addApartement(smartStreet, 1);
 
-    ApartmentCollection.addApartement(smartStreet, 1, 2);
-    ApartmentCollection.addApartement(smartStreet, 1, 2);
+    ApartmentCollection.addApartement(smartStreet, 1);
+    ApartmentCollection.addApartement(smartStreet, 1);
 
-    ApartmentCollection.addApartement(smartStreet, 1, 3);
-    ApartmentCollection.addApartement(smartStreet, 1, 3);
-
-    // Testing if everything works.
-    System.out.println(smartStreet);
-    System.out.println(smartStreet.smartBuildings.get(1));
-    System.out.println(smartStreet.smartBuildings.get(1).controlRoom);
-    System.out.println(smartStreet.smartBuildings.get(1).floors.get(1));
-    System.out.println(smartStreet.smartBuildings.get(1).floors.get(1).apartments.get(1));
-
+    ApartmentCollection.addApartement(smartStreet, 1);
+    ApartmentCollection.addApartement(smartStreet, 1);
+    
     // ---- SEEDERS ---- //
   }
 }

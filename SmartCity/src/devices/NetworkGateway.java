@@ -1,24 +1,29 @@
 package devices;
-import java.util.*;
-
 public class NetworkGateway {
 
-  public Map<Integer, SensorNodes> sensorNodes;
-  public CommunicationModule communicationModule;
-  public Microcontroller microController;
+  public String communicationModule;
+  public String microController;
 
   public NetworkGateway() {
-		this.sensorNodes = new HashMap<Integer, SensorNodes>();
-    this.communicationModule = new CommunicationModule();
-    this.microController = new Microcontroller();
+    setCommunicationModule("ESP8266 IoT");
+    setMicroController("Arduino");
   }
 
-  @Override
-  public String toString() {
-    String result = "[NetworkGateway]\n";
-    for (Map.Entry<Integer, SensorNodes> sensorNode : sensorNodes.entrySet()) {
-      result = result.concat(String.format("\t[Apartment-%d]\t\t\t\t%s\n", sensorNode.getKey(), sensorNode.getValue()));
-    }
-    return result;
+
+  public String getCommunicationModule() {
+    return this.communicationModule;
   }
+
+  public void setCommunicationModule(String communicationModule) {
+    this.communicationModule = communicationModule;
+  }
+
+  public String getMicroController() {
+    return this.microController;
+  }
+
+  public void setMicroController(String microController) {
+    this.microController = microController;
+  }
+
 }

@@ -2,28 +2,30 @@ package devices;
 
 public class SensorNodes {
 
-  public MotionSensor motionSensor;
-  public TemperatureSensor temperatureSensor;
-  public Microcontroller microcontroller;
-  public CommunicationModule communicationModule;
-  public HumiditySensor humiditySensor;
+  private String temperatureSensor;
+  private String microController;
 
   public SensorNodes() {
-    this.motionSensor = new MotionSensor();
-    this.temperatureSensor = new TemperatureSensor();
-    this.humiditySensor = new HumiditySensor();
-    this.microcontroller = new Microcontroller();
-    this.communicationModule = new CommunicationModule();
+    int min = 0, max = 40;
+    int value = (int) Math.floor(Math.random()*(max-min+1)+min);
+    this.temperatureSensor = String.format("%d °C", value);
+    setMicroController("Arduino");
   }
 
-  @Override
-  public String toString() {
-    String result = "";
-    result = result.concat(motionSensor.toString());
-    result = result.concat(temperatureSensor.toString());
-    result = result.concat(microcontroller.toString());
-    result = result.concat(communicationModule.toString());
-    result = result.concat(humiditySensor.toString());
-    return result;
+
+  public String getTemperatureSensor() {
+    return this.temperatureSensor;
+  }
+
+  public void setTemperatureSensor(String temperatureSensor) {
+    this.temperatureSensor = temperatureSensor;
+  }
+
+  public String getMicroController() {
+    return this.microController;
+  }
+
+  public void setMicroController(String microController) {
+    this.microController = microController;
   }
 }
