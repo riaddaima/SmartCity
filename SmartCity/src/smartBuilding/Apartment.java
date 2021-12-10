@@ -7,12 +7,12 @@ import devices.SensorNodes;
 public class Apartment {
 	private int ID;
   public SensorNodes sensorNode;
-	public Map<ApplianceType, Appliance> appliances;
+	public Map<String, Appliance> appliances;
 
 	public Apartment(int ID) {
 		this.ID = ID;
 		this.sensorNode = new SensorNodes();
-		this.appliances = new HashMap<ApplianceType, Appliance>();
+		this.appliances = new HashMap<String, Appliance>();
 	}
 
 	public int getID() {
