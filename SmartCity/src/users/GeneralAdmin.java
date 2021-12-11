@@ -1,20 +1,21 @@
 package users;
 
-import smartStreet.*;
+import smartStreet.SmartStreet;
+import smartStreet.SmartStreetCollection;
 
 public class GeneralAdmin extends User {
 
-	public GeneralAdmin(String fullName, int iD, String email, String phoneNumber) {
-		super(fullName, iD, email, phoneNumber);
+	public GeneralAdmin(String fullName, int ID, String email, String phoneNumber, Account account) {
+		super(fullName, ID, email, phoneNumber, account);
 	}
 	
 //	public void addBlg(Building blg) {
 //		
 //	}
 	
-//	public void addStreet(SmartStreet street) {
-//		SmartStreetCollection.addStreet(street);
-//	}
+	public SmartStreet addStreet(String streetName) {
+		return SmartStreetCollection.addSmartStreet(streetName);
+	}
 	
 //	public void addApt(Apartment apt) {}
 	
@@ -40,4 +41,12 @@ public class GeneralAdmin extends User {
 	
 //	public void handleRport() {}
 	
+
+	@Override
+	public String toString() {
+		return "{" +
+			"}";
+	}
+
+
 }

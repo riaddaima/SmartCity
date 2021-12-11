@@ -10,11 +10,12 @@ public class User {
 	private Account account;
 	
 	
-	public User(String fullName, int iD, String email, String phoneNumber) {
+	public User(String fullName, int ID, String email, String phoneNumber, Account account) {
 		this.fullName = fullName;
-		ID = iD;
+		this.ID = ID;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
+		this.account = account;
 	}
 
 
@@ -89,8 +90,6 @@ public class User {
 	public String toString() {
 		return "User [fullName=" + fullName + ", ID=" + ID + ", email=" + email + ", phoneNumber=" + phoneNumber + "]";
 	}
-	
-//	public viewData();
 	
 	public void changePassword(String oldPassword, String newPassword, String confirmation) {
 		if (oldPassword.equals(account.getPassword()) && newPassword.equals(confirmation)) {

@@ -5,11 +5,15 @@ public class Resident extends User{
 	private String profession;
 	private Address address;
 	
+	public Resident(String fullName, int ID, String email, String phoneNumber, Account account, int age, String profession) {
+		super(fullName, ID, email, phoneNumber, account);
+		this.age = age;
+		this.profession = profession;
+	}
 	
-	
-	public Resident(String fullName, int iD, String email, String phoneNumber, int age, String profession,
+	public Resident(String fullName, int ID, String email, String phoneNumber, Account account, int age, String profession,
 			Address address) {
-		super(fullName, iD, email, phoneNumber);
+		super(fullName, ID, email, phoneNumber, account);
 		this.age = age;
 		this.profession = profession;
 		this.address = address;

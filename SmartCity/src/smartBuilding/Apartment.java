@@ -1,6 +1,5 @@
 package smartBuilding;
 import java.util.*;
-import devices.ApplianceType;
 import devices.Appliance;
 import devices.SensorNodes;
 
